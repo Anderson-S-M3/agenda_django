@@ -15,7 +15,7 @@
 <h2 id="instalacao">Instalação:</h2>
 <h5>Pré-requisito:</h5>
 
-Antes de começar, você vai precisar ter em sua máquina o [Git](https://git-scm.com) instalado.
+Antes de começar, você vai precisar ter em sua máquina o [Git](https://git-scm.com) instalado.<br>
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 <h5 id="rodando">🎲 Rodando o Back End (servidor):</h5>
