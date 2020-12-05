@@ -10,7 +10,7 @@
 
 <h5 align="center"> 🚧 Agenda :snake:  Em construção...  🚧 </h5>
 
-<p align="center"><a href="#instalacao">Instalação</a> • <a href="#rodando">Rodando o Server</a> • <a href="#demonstracao">Demonstração</a></p>
+<p align="center"><a href="#instalacao">Instalação</a> • <a href="#rodando">Rodando o Server</a> • <a href="#demonstracao"><strike>Demonstração</strike></a></p>
 
 <h2 id="instalacao">Instalação:</h2>
 <h5>Pré-requisito:</h5>
