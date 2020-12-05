@@ -40,7 +40,6 @@ manage.py makemigrations / manage.py migrate
 manage.py runserver
 
 # O servidor inciará na porta:8000 - acesse < http://localhost:8000 >
-
 ```
 
 <h2>🛠 Tecnologias</h2>
@@ -48,10 +47,23 @@ manage.py runserver
 
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
 - [Django](https://www.djangoproject.com/)
+
 <br>
 <br>
+
 ## 📝 Licença
+---
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Anderson S.
+<br>
+<br>
+
+### Autor
+---
+
+Feito com ❤️ por Anderson S. 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Anderson S Antunes-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anderson-s-antunes-b879251b9/)](https://www.linkedin.com/in/anderson-s-antunes-b879251b9/) 
+
+[![Email](https://img.shields.io/badge/E--mail-anderson__s__antunes%40hotmail.com-blue)](mailto:anderson_s_antunes@hotmail.com)
