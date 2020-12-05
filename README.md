@@ -1,9 +1,12 @@
 <h1 align="center">
 <a href="https://github.com/Anderson-S-M3/agenda_django">🔗 Agenda Django</a>
 </h1>
+
 <p align="center">Agenda com funçoes de <b>Login, Crud, Research field</b>.</p>
+
 <p align="center">
-<img alt="skill" src="https://img.shields.io/badge/Python-3776AB?style=badge&logo=python&logoColor=white"> <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> <img alt="PyPI - Django Version badge" src="https://img.shields.io/badge/django%20versions-2.2.16-blue">
+<img alt="skill-python" src="https://img.shields.io/badge/Python-3776AB?style=badge&logo=python&logoColor=white"> <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> <img alt="PyPI - Django Version badge" src="https://img.shields.io/badge/django%20versions-2.2.16-blue">
+</p>
 
 <h5 align="center"> 🚧 Agenda :snake:  Em construção...  🚧 </h5>
 
@@ -11,8 +14,9 @@
 
 <h2 id="instalacao">Instalação:</h2>
 <h5>Pré-requisito:</h5>
-<p>Antes de começar, você vai precisar ter em sua máquina o [Git](https://git-scm.com) instalado.
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)</p>
+
+Antes de começar, você vai precisar ter em sua máquina o [Git](https://git-scm.com) instalado.
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 <h5 id="rodando">🎲 Rodando o Back End (servidor):</h5>
 
