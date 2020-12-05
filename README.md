@@ -3,7 +3,7 @@
 </h1>
 <p align="center">Agenda com funçoes de <b>Login, Crud, Research field</b>.</p>
 <p align="center">
-   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> <img alt="PyPI - Django Version badge" src="https://img.shields.io/badge/django%20versions-2.2.16-blue">
+<img alt="skill" src="https://img.shields.io/badge/Python-3776AB?style=badge&logo=python&logoColor=white"> <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> <img alt="PyPI - Django Version badge" src="https://img.shields.io/badge/django%20versions-2.2.16-blue">
 
 <h5 align="center"> 🚧 Agenda :snake:  Em construção...  🚧 </h5>
 
@@ -64,6 +64,5 @@ Este projeto esta sobe a licença [MIT](./LICENSE).
 
 Feito com ❤️ por Anderson S. 👋🏽 Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Anderson S Antunes-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anderson-s-antunes-b879251b9/)](https://www.linkedin.com/in/anderson-s-antunes-b879251b9/) 
-
-[![Email](https://img.shields.io/badge/E--mail-anderson__s__antunes%40hotmail.com-blue)](mailto:anderson_s_antunes@hotmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/Anderson_S-0077B5?style=for-the-badge&logo=linkedin&logoColor=white/)](https://www.linkedin.com/in/anderson-s-antunes-b879251b9/) <br>
+[![Email](https://img.shields.io/badge/Anderson__S__Antunes@hotmail.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:anderson_s_antunes@hotmail.com)
