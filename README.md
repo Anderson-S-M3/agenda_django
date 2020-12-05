@@ -15,29 +15,33 @@
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)</p>
 
 <h5 id="rodando">🎲 Rodando o Back End (servidor):</h5>
-` # Clone este repositório`
-`git clone < https://github.com/Anderson-S-M3/agenda_django.git >`
 
-`# Acesse a pasta do projeto no terminal/cmd`
-`cd agenda_django`
+```
+# Clone este repositório
+git clone < https://github.com/Anderson-S-M3/agenda_django.git >
 
-`# crie uma Venv`
-`python -m venv <nome_da_venv>`
+# Acesse a pasta do projeto no terminal/cmd
+cd agenda_django
 
-`#Ative a Venv`
-`cmd: "<nome_da_venv>/Scripts/activate"`
-`terminal: source <nome_da_venv>/bin/activate`
+# crie uma Venv
+python -m venv <nome_da_venv>
 
-`# Instale o Django`
-`pip install Django==2.2.16`
+#Ative a Venv
+cmd: "<nome_da_venv>/Scripts/activate"
+terminal: source <nome_da_venv>/bin/activate
 
-`# Instale as dependências`
-`manage.py makemigrations / manage.py migrate`
+# Instale o Django
+pip install Django==2.2.16
 
-`# Execute a aplicação`
-`manage.py runserver`
+# Instale as dependências
+manage.py makemigrations / manage.py migrate
 
-`# O servidor inciará na porta:8000 - acesse < http://localhost:8000 >`
+# Execute a aplicação
+manage.py runserver
+
+# O servidor inciará na porta:8000 - acesse < http://localhost:8000 >
+
+```
 
 <h2>🛠 Tecnologias</h2>
 <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
