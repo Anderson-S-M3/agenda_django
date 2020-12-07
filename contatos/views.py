@@ -1,18 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.db.models.expressions import Value
 from django.db.models.functions import Concat
 from django.core.paginator import Paginator
 from django.db.models.query_utils import Q
+from django.contrib import messages
 from django.http import Http404
 from .models import Contato
 
 
 def index(request):
     contatos = Contato.objects.order_by('-id').filter(
-        ocultar = True
+        ocultar=True
     )
-    paginator = Paginator(contatos, 1) # Show 25 contacts per page
-
+    paginator = Paginator(contatos, 1)  # Show 25 contacts per page
     page = request.GET.get('page')
     contatos = paginator.get_page(page)
 
@@ -20,7 +20,7 @@ def index(request):
 
 
 def detalhe_contato(request, contato_id):
-    contato = get_object_or_404(Contato, id = contato_id)
+    contato = get_object_or_404(Contato, id=contato_id)
 
     if not contato.ocultar:
         raise Http404()
@@ -29,17 +29,34 @@ def detalhe_contato(request, contato_id):
 
 
 def busca(request):
-    termo = request.GET.get('termo')
-    campos = Concat('nome', Value(' '), 'sobrenome') 
+    try:
+        termo = request.GET.get('termo')
+        campos = Concat('nome', Value(' '), 'sobrenome')
+        contatos = Contato.objects.annotate(
+            nome_completo=campos
+        ).filter(
+            Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo)
+        )
 
-    contatos = Contato.objects.annotate(
-        nome_completo = campos
-    ).filter(
-        Q(nome_completo__icontains = termo) | Q(telefone__icontains=termo)
-    )
-    paginator = Paginator(contatos, 1) # Show 25 contacts per page
+        if termo == '':
+            contatos = Contato.objects.order_by('-id').filter(
+                ocultar=True
+            )
+        if len(contatos) == 1:
+            messages.info(request, f'{len(contatos)} contato encontrado')
 
-    page = request.GET.get('page')
-    contatos = paginator.get_page(page)
+        elif termo != '' and len(contatos) != 1:
+            messages.info(request, f'{len(contatos)} contatos encontrados')
 
-    return render(request, 'contatos/index.html', {"contatos": contatos})
+        paginator = Paginator(contatos, 1)  # Mostra 1 contato por pagina
+        page = request.GET.get('page')
+        contatos = paginator.get_page(page)
+
+        return render(request, 'contatos/index.html', {"contatos": contatos})
+
+    except ValueError:
+        return redirect('/busca/?termo=')
+
+
+def adicionar(request):
+    return render(request, 'contatos/add_contato.html')

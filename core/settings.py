@@ -13,7 +13,7 @@ from typing import Container
 from django.contrib.messages import constants
 import os
 
-from django.contrib.messages.constants import SUCCESS
+from django.contrib.messages.constants import INFO, SUCCESS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -138,4 +138,5 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
     constants.DEBUG: 'alert-info',
     constants.SUCCESS: 'alert-sucess',
+    constants.INFO: 'alert-info',
 }
