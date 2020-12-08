@@ -1,0 +1,72 @@
+{% extends 'accounts/_accounts-base.html' %}
+{% block login_register %}
+<style>
+  body{
+      background-color: #56baed !important;
+  }
+  .alert{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+</style>
+<form method="POST" action="{% url 'register' %}">
+  {% csrf_token %}
+  {% include 'parciais/_message.html' %}
+  <input
+    value="{{request.POST.nome}}"
+    type="text"
+    id="nome"
+    class="fadeIn second"
+    name="nome"
+    placeholder="Nome*"
+    required
+  />
+  <input
+    value="{{request.POST.sobrenome}}"
+    type="text"
+    id="sobrenome"
+    class="fadeIn second"
+    name="sobrenome"
+    placeholder="Sobrenome"
+  />
+  <input
+    value="{{request.POST.email}}"
+    type="email"
+    id="email"
+    class="fadeIn second"
+    name="email"
+    placeholder="E-mail*"
+    required
+  />
+  <input
+    type="text"
+    id="usuario"
+    class="fadeIn second"
+    name="usuario"
+    placeholder="Usuario*"
+    required
+  />
+  <input
+    type="password"
+    id="senha"
+    class="fadeIn second"
+    name="senha"
+    placeholder="Senha*"
+    required
+  />
+  <input
+    type="password"
+    id="senha2"
+    class="fadeIn second"
+    name="senha2"
+    placeholder="Repetir Senha*"
+    required
+  />
+  <button  type="submit" class="fadeIn fourth">Criar</button>
+</form>
+
+<!-- Remind Passowrd -->
+<div id="formFooter">
+  <a class="underlineHover" href="{% url 'login' %}">Já tem uma conta ?</a>
+</div>
+{% endblock login_register %}

@@ -1,0 +1,22 @@
+{% load static %}
+
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<link href="{% static 'accounts/accounts.css' %}" rel="stylesheet" id="bootstrap-css">
+<!-- Include the above in your HEAD tag -->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{% static 'img/logo_python.png' %}" id="icon" alt="User Icon" style="width:70px; height:auto; margin-top:20px;"/>
+    </div>
+
+    <!-- Login/Register Form -->
+    {% block login_register %}
+    {% endblock login_register %}
+
+  </div>
+</div>

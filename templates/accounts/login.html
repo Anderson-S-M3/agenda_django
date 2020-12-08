@@ -1,0 +1,38 @@
+{% extends 'accounts/_accounts-base.html' %}
+{% block login_register %}
+<style>
+  body{
+      background-color: #56baed !important;
+  }
+  .alert{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+</style>
+<form method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  {% include 'parciais/_message.html' %}
+  <input
+    type="text"
+    id="usuario"
+    class="fadeIn second"
+    name="usuario"
+    placeholder="Usuario*"
+    required
+  />
+  <input
+    type="password"
+    id="senha"
+    class="fadeIn second"
+    name="senha"
+    placeholder="Senha*"
+    required
+  />
+  <button  type="submit" class="fadeIn fourth">Entrar</button>
+</form>
+
+<!-- Remind Passowrd -->
+<div id="formFooter">
+  <a class="underlineHover" href="{% url 'register' %}">Criar Conta</a>
+</div>
+{% endblock login_register %}
