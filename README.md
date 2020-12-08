@@ -51,6 +51,12 @@ manage.py runserver
 
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
 - [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+<h2>Templates</h2>
+<p>Link dos templates utilizados no projeto:</p>
+
+- [login](https://bootsnipp.com/snippets/dldxB)
 
 <br>
 <br>

@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.db.models.expressions import Value
 from django.db.models.functions import Concat
 from django.core.paginator import Paginator
@@ -7,7 +8,7 @@ from django.contrib import messages
 from django.http import Http404
 from .models import Contato
 
-
+@login_required(redirect_field_name='login')
 def index(request):
     contatos = Contato.objects.order_by('-id').filter(
         ocultar=True
