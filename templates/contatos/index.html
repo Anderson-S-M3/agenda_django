@@ -41,19 +41,54 @@
       </div>
     </div>
 
-    <nav aria-label="Page navigation example">
+    <nav aria-label="...">
       <ul class="pagination">
+        {% comment %} Previous {% endcomment %}
+        {% if contatos.number == 1 %}
+          <li class="page-item disabled">
+            <a class="page-link">Anterior</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="/?page={{ contatos.previous_page_number }}&termo=" tabindex="-1">Anterior</a>
+          </li>        
+        {% endif %}
+
+        {% if contatos.number|add:'-2' > 1 %}
+          <li><a class="page-link" href="?page=1">&hellip;</a></li>
+        {% endif %}
+
+        {% comment %} Pagination 1 ~ 3 {% endcomment %}
         {% for pagina in contatos.paginator.page_range %}
+
           {% if contatos.number == pagina %}
             <li class="page-item active">
               <a class="page-link" href="?page={{pagina}}&termo={{request.GET.termo}}">{{pagina}}</a>
             </li>
-          {% else %}
+          {% elif pagina > contatos.number|add:'-3' and pagina < contatos.number|add:'2' %}
             <li class="page-item">
               <a class="page-link" href="?page={{pagina}}&termo={{request.GET.termo}}">{{pagina}}</a>
             </li>
           {% endif %}
+        
         {% endfor %}
+
+        {% comment %} Next {% endcomment %}
+        {% if contatos.paginator.num_pages > contatos.number|add:'1' %}
+          <li>
+            <a class="page-link" href="?page={{ contatos.paginator.num_pages }}">&hellip;</a>
+          </li>
+        {% endif %}
+        
+        {% if contatos.number == contatos.paginator.num_pages %}
+          <li class="page-item disabled">
+            <a class="page-link">Proximo</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="/?page={{ contatos.next_page_number }}&termo=" tabindex="-1">Proximo</a>
+          </li>
+        {% endif %}
       </ul>
     </nav>
   </div>
