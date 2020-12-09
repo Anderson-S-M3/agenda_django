@@ -65,8 +65,8 @@ manage.py runserver
 
 <p>Demonstração e codigo:</p>
 
-<p><b>Barra de Busca:</b></p>
-<img src="https://user-images.githubusercontent.com/65872811/101603448-59613d80-39de-11eb-83e6-b061a2dd11c0.gif" alt="exemplo seatch_field">
+<p><b>Barra de Pesquisa:</b></p>
+<img src="https://user-images.githubusercontent.com/65872811/101688783-48024a80-3a4b-11eb-981c-f4818d7bab4b.gif">
 
 ```
 usuario = request.user
