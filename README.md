@@ -95,7 +95,7 @@ try:
 <br>
 
 <p><b>Pagination:</b></p>
-<img src="https://user-images.githubusercontent.com/65872811/101603901-ffad4300-39de-11eb-8264-00b8e2c81e61.gif" alt="exemplo seatch_field">
+<img src="https://user-images.githubusercontent.com/65872811/101688394-ba265f80-3a4a-11eb-98d7-3670ea9208b6.gif" alt="exemplo seatch_field">
 
 ```
 paginator = Paginator(contatos, 1)  # Mostra 1 contato por pagina
