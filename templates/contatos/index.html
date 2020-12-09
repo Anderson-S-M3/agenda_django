@@ -6,6 +6,8 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="mt-5">Minha agenda</h1>
+        <a class="d-flex flex-row-reverse" href="{% url 'criar_contato' %}"
+        style="color:#5347ff;">Criar Contato</a>
 
         {% include 'parciais/_form.html' %}
         {% include 'parciais/_message.html' %}
@@ -13,7 +15,6 @@
         <table class="table">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Nome</th>
               <th>Sobrenome</th>
               <th>Telefone</th>
@@ -23,7 +24,6 @@
           <tbody>
           {% for contato in contatos  %}
               <tr>
-                <td>{{contato.id}}</td>
                 <td>
                   <a href="{% url 'detalhe_contato' contato.id %}"> {{contato.nome}}</a>
                 </td>
@@ -54,5 +54,4 @@
       </ul>
     </nav>
   </div>
-
 {% endblock conteudo %}

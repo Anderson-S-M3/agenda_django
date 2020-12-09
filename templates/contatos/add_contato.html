@@ -1,84 +1,16 @@
-{% extends '_base.html' %} {% block conteudo %}
+{% extends '_base.html' %}
+{% block conteudo %}
+{% include 'parciais/_message.html' %}
 <!-- Page Content -->
 <div class="container">
   <div class="row" style="margin-top: 50px; margin-left: 15px">
-    <form action="/add_contato/" method="post">
-      <div class="form-group">
-        <label for="nome">Nome:</label>
-        <input
-          value="{{request.POST.nome}}"
-          id="nome"
-          type="text"
-          name="nome"
-          value="{{ current_name }}"
-          class="form-control"
-          placeholder="Nome"
-        />
-      </div>
-      <div class="form-group">
-        <label for="sobrenome">Sobrenome:</label>
-        <input
-          value="{{request.POST.sobrenome}}"
-          id="sobrenome"
-          type="text"
-          name="sobrenome"
-          value="{{ current_name }}"
-          class="form-control"
-          placeholder="Sobrenome"
-        />
-      </div>
-      <div class="form-group">
-        <label for="telefone">Telefone:</label>
-        <input
-          value="{{request.POST.telefone}}"
-          id="telefone"
-          type="tel"
-          name="telefone"
-          value="{{ current_name }}"
-          class="form-control"
-          placeholder="(99) 9 9999-9999"
-        />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input
-          value="{{request.POST.email}}"
-          id="email"
-          type="email"
-          name="email"
-          value="{{ current_name }}"
-          class="form-control"
-          placeholder="E-mail"
-        />
-      </div>
-      <div class="form-group">
-        <label for="categoria">Categoria:</label>
-        <select name="flavor" class="form-control">
-          <option value="van" selected="">
-            <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">Baunilha </font>
-            </font>
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <div class="form-group">
-          <label for="descricao">Descrição:</label>
-          <textarea
-            value="{{request.POST.descricao}}"
-            id="descricao"
-            name="descricao"
-            value="{{ current_name }}"
-            cols="50"
-            rows="5"
-            maxlength="150"
-            class="form-control"
-          ></textarea>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+    <form action="{% url 'criar_contato' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+          {{form}}
+        </table>
+      <button type="submit" class="btn btn-primary" style="margin-bottom:30px;">Criar Contato</button>
     </form>
   </div>
 </div>
-
 {% endblock conteudo %}

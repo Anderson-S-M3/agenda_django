@@ -1,5 +1,7 @@
 {% extends 'accounts/_accounts-base.html' %}
+{% block titulo %}Login{% endblock titulo %}
 {% block login_register %}
+{% if not user.is_authenticated %}
 <style>
   body{
       background-color: #56baed !important;
@@ -35,4 +37,15 @@
 <div id="formFooter">
   <a class="underlineHover" href="{% url 'register' %}">Criar Conta</a>
 </div>
+{% else %}
+<style>
+  .underlineHover:hover {
+    color: #00a1ff !important;
+  }
+</style>
+  <div id="formFooter">
+  <p>Você já está logado como "{{ user }}" <a  class="underlineHover"
+  href="{% url 'logout' %}">clique aqui</a> para deslogar</p>
+</div>
+{% endif %}
 {% endblock login_register %}
