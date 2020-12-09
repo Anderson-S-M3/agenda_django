@@ -95,13 +95,21 @@ try:
 <br>
 
 <p><b>Pagination:</b></p>
-<img src="https://user-images.githubusercontent.com/65872811/101688394-ba265f80-3a4a-11eb-98d7-3670ea9208b6.gif" alt="exemplo seatch_field">
+<img src="https://user-images.githubusercontent.com/65872811/101688394-ba265f80-3a4a-11eb-98d7-3670ea9208b6.gif" alt="search_field">
 
 ```
 paginator = Paginator(contatos, 1)  # Mostra 1 contato por pagina
 page = request.GET.get('page')
 contatos = paginator.get_page(page)
 ```
+
+<p><b>Criar Contato:</b></p>
+<img src="https://user-images.githubusercontent.com/65872811/101691247-30c45c80-3a4d-11eb-84f6-87af41c6bb1f.gif" alt="criar_contato">
+
+<br>
+
+<p><b>Deletar/Editar Contato:</b></p>
+<img src="https://user-images.githubusercontent.com/65872811/101691515-8ef13f80-3a4d-11eb-82d8-5e869351e1fa.gif" alt="deletar_editar">
 
 <br>
 <br>
