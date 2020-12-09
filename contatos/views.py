@@ -42,7 +42,7 @@ def busca(request):
         #Pesquisar
         termo = request.GET.get('termo')
         campos = Concat('nome', Value(' '), 'sobrenome')
-        contatos = Contato.objects.annotate(
+        contatos = Contato.objects.filter(usuario=usuario).annotate(
             nome_completo=campos
         ).filter(
             Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo)
@@ -111,8 +111,7 @@ def deletar_contato(request, id_contato):
 def editar_contato(request, id_contato):
     usuario = request.user
     contato = Contato.objects.get(id=id_contato)
-    form = ContatoForm(request.POST or None, instance=contato)
-
+    form = ContatoForm(request.POST, request.FILES or None, instance=contato)
 
     if usuario == contato.usuario:
         if form.is_valid():
@@ -121,6 +120,4 @@ def editar_contato(request, id_contato):
             return redirect('index_contatos')
 
         return render(request, 'contatos/add_contato.html', {'form':form, 'contato':contato})
-
     return redirect('criar_contato')
-    
