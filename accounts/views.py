@@ -1,30 +1,33 @@
 from django.contrib.auth import authenticate, login, logout
 from django.core.validators import validate_email
-from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
 from django.contrib import messages
 
 
-def logar(request):
+def login_view(request):
     if not request.method == 'POST':
         return render(request, 'accounts/login.html')
-    
-    print('PASSSSOUUUUUUUUUUUUUUUUU')
-    print(request)
+
     username = request.POST['usuario']
     password = request.POST['senha']
     user = authenticate(request, username=username, password=password)
     
     if user is not None:
         login(request, user)
-        messages.info(request,'Logado com sucesso')
+        messages.success(request,'Logado com sucesso')
         return redirect('index_contatos')
     else:
         messages.error(request,'Usuario ou Senha não encontrados')
         return render(request, 'accounts/login.html')
 
 
-def register(request):
+def logout_view(request):
+    logout(request)
+    return redirect('index_contatos')
+
+
+def register_view(request):
     if not request.method == 'POST':
         return render(request, 'accounts/register.html')
 
@@ -42,7 +45,6 @@ def register(request):
     
     try:  # Validar E-MAIL
         validate_email(email)
-    
     except:
         messages.error(request,'E-mail invalido')
         return redirect('register')
@@ -76,11 +78,4 @@ def register(request):
         password=senha
         )
         user.save()
-
         return redirect('login')
-
-
-def logout_view(request):
-    logout(request)
-    # Redirect to a success page.
-    ...
