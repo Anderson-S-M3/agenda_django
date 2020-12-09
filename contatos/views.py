@@ -111,15 +111,16 @@ def deletar_contato(request, id_contato):
 def editar_contato(request, id_contato):
     usuario = request.user
     contato = Contato.objects.get(id=id_contato)
-    form = ContatoForm(instance=contato)
+    if not request.method == 'POST':
+        form = ContatoForm(instance=contato)
+        return render(request, 'contatos/add_contato.html', {'form':form, 'contato':contato})
 
     if usuario == contato.usuario:
+        form = ContatoForm(request.POST, request.FILES, instance=contato)
         
         if form.is_valid():
-            form = ContatoForm(request.POST, request.FILES, instance=contato)
             form.save()
             messages.info(request, 'Contato alterado')
             return redirect('index_contatos')
 
-        return render(request, 'contatos/add_contato.html', {'form':form, 'contato':contato})
     return redirect('criar_contato')
