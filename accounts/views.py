@@ -15,7 +15,7 @@ def login_view(request):
     
     if user is not None:
         login(request, user)
-        messages.success(request,'Logado com sucesso')
+        messages.info(request,'Logado com sucesso')
         return redirect('index_contatos')
     else:
         messages.error(request,'Usuario ou Senha não encontrados')

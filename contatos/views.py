@@ -87,7 +87,6 @@ def criar_contato(request):
         form = ContatoForm(request.POST)
         return render(request, 'contatos/add_contato.html', {'form':form})
 
-    print(request.FILES)
     a = form.save(commit=False)
     a.usuario = request.user
     a.save()
@@ -96,3 +95,32 @@ def criar_contato(request):
     return redirect('index_contatos')
 
 
+@login_required(redirect_field_name='login')
+def deletar_contato(request, id_contato):
+    usuario = request.user
+    contato = Contato.objects.get(id=id_contato)
+
+    if usuario == contato.usuario:
+        contato.delete()
+        messages.info(request, 'Contato Excluido')
+        return redirect('index_contatos')
+
+    return redirect('index_contatos')
+
+@login_required(redirect_field_name='login')
+def editar_contato(request, id_contato):
+    usuario = request.user
+    contato = Contato.objects.get(id=id_contato)
+    form = ContatoForm(request.POST or None, instance=contato)
+
+
+    if usuario == contato.usuario:
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Contato alterado')
+            return redirect('index_contatos')
+
+        return render(request, 'contatos/add_contato.html', {'form':form, 'contato':contato})
+
+    return redirect('criar_contato')
+    

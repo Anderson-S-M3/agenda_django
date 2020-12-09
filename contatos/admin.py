@@ -3,7 +3,7 @@ from .models import Contato, Categoria
 
 
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = ('usuario','nome','sobrenome', 'email', 'telefone', 'categoria', 'mostrar')
+    list_display = ('id', 'usuario','nome','sobrenome', 'email', 'telefone', 'categoria', 'mostrar')
     list_display_links = ('nome', 'sobrenome')
     list_editable = ('telefone', 'mostrar')
 
