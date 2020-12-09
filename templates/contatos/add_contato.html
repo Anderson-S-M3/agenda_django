@@ -4,12 +4,21 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row" style="margin-top: 50px; margin-left: 15px">
+  {% if contato %}
+    <form action="{% url 'editar_contato' contato.id %}" method="post" enctype="multipart/form-data">
+  {% else %}
     <form action="{% url 'criar_contato' %}" method="post" enctype="multipart/form-data">
+  {% endif %}      
         {% csrf_token %}
         <table class="table">
           {{form}}
         </table>
-      <button type="submit" class="btn btn-primary" style="margin-bottom:30px;">Criar Contato</button>
+        
+        {% if contato %}
+          <button type="submit" class="btn btn-primary" style="margin-bottom:30px;">Salvar</button>
+        {% else %}
+          <button type="submit" class="btn btn-primary" style="margin-bottom:30px;">Criar Contato</button>
+        {% endif %}
     </form>
   </div>
 </div>

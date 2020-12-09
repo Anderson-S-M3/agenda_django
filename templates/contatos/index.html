@@ -7,7 +7,7 @@
       <div class="col-lg-12">
         <h1 class="mt-5">Minha agenda</h1>
         <a class="d-flex flex-row-reverse" href="{% url 'criar_contato' %}"
-        style="color:#5347ff;">Criar Contato</a>
+        style="color:#5347ff;">Criar Contato<b>+</b></a>
 
         {% include 'parciais/_form.html' %}
         {% include 'parciais/_message.html' %}
@@ -30,6 +30,9 @@
                 <td>{{contato.sobrenome}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.categoria}}</td>
+                <td><a href="{% url 'deletar_contato' contato.id %}" style="color:blue;">
+                <i class="far fa-trash-alt"></i></a></td>
+                <td><a href="{% url 'editar_contato' contato.id %}"><i class="far fa-edit" style="color:blue;"></i></a></td>
               </tr>
           {% endfor %}
           </tbody>
