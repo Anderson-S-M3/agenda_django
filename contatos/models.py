@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
@@ -16,8 +17,10 @@ class Contato(models.Model):
     data_criacao = models.DateTimeField(default=timezone.now)
     descricao = models.TextField(max_length=150, blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
-    ocultar = models.BooleanField(default=True)
+    mostrar = models.BooleanField(default=True)
     foto = models.ImageField(blank=True, upload_to='foto/%Y/%m')
+
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
